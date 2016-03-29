@@ -6,9 +6,13 @@ We want the code to extract just one example within the same minute: the first o
 In this example:
 
 STOCK   TRADE TIME      PRICE
+
 XXX     10:33:645       18.54
+
 XXX     10:34:123       18.65
+
 XXX     10:34:234       18.62
+
 YYY     10:07:345       45.74
 
 It must return (taking the first occurency):
