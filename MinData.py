@@ -23,8 +23,7 @@ logData = sc.textFile(logFile)
 
 
 #2 SELECTION OF STOCKS 
-stocks = ['ABRE11', 'PETR4']
-#stocks = ['PETR3', 'PETR4' ,'ABEV3', 'BBAS3', 'BBDC4', 'BVMF3', 'GGBR4', 'ITSA4', 'ITUB4','VALE3', 'VALE5']
+stocks = ['PETR3', 'PETR4' ,'ABEV3', 'BBAS3', 'BBDC4', 'BVMF3', 'GGBR4', 'ITSA4', 'ITUB4','VALE3', 'VALE5']
 def filterStock(line):
     return any(keyword in line for keyword in stocks)
 
