@@ -45,7 +45,7 @@ def makeColumns(line):
 def minData(a, b):
     return a;
 
-#6 THIS IS TO DEAL WITH DIFFERENT STOCK IN DISTINCT OUTOUT FILES
+#6 THIS IS TO DEAL WITH DIFFERENT STOCK IN DISTINCT OUTPUT FILES
 def separate(a):
     if stock in a[0]:
         return (a[0],a[1])    
@@ -59,8 +59,8 @@ result= logData.filter(filterStock).map(makeColumns).reduceByKey(minData).sortBy
 
 
 #8 OUTPUT
-#   FIRST WE FILTER THE 'stock' IS IN THE KEYS - filter(separate)   
-#   ".values()" IS TO TAKE ONLY THE OUTPUT OF THE (KEY, VALUE) PAIRS
+#   FIRST WE FILTER IF stock IS IN THE KEYS - filter(separate)   
+#   ".values()" IS TO TAKE ONLY THE output OF THE (KEY, VALUE) PAIRS
 #   ".coalesce(1)" PUT EVERYTHING IN JUST ONE OUTPUT FILE, NAMED AS THE ELEMENTS IN THE stocks LIST
 for stock in stocks:
     result.filter(separate).values().coalesce(1).saveAsTextFile(str(stock))
